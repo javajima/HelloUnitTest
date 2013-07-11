@@ -9,7 +9,7 @@
 	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
     
     <target name="findbugs" depends="copy-lib">
-		<findbugs home="${findbugs.dir}"
+		<findbugs home="/usr/local/findbugs"
         	  	  output="xml"
         		  outputFile="${reports.dir}/findbugs_report.xml" >
         	<class location="bin/classes/${tested.project.app.package}" />
