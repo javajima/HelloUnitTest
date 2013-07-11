@@ -34,8 +34,11 @@ public class MainActivity extends Activity {
        });		
 	}
 
-    public String addHello(String s) {
-        return "Hello, " + s + "!";
+    public String addHello(String str) {
+    	if (str == null) {
+    		new IllegalArgumentException("input must not be null");
+    	}
+        return "Hello, " + str + "!";
     }	
 	
 	@Override
