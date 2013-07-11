@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target name="findbugs">
+    <property name="reports.dir" value="bin/reports" />
+    <property name="findbugs.dir" value="/usr/local/findbugs"/>
+    
+	<taskdef name="findbugs"
+	    	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
+	    	 classpath="${findbugs.dir}/lib/findbugs-ant.jar" />
+	
+    <findbugs home="${findbugs.dir}"
+        	  output="xml"
+        	  outputFile="${reports.dir}/findbugs_report.xml" >
+        <class location="bin/classes/${tested.project.app.package}" />
+    </findbugs>
+</target>
