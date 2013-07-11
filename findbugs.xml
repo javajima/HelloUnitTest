@@ -7,7 +7,7 @@
     
 	<taskdef name="findbugs"
 	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
-	   	 	 classpath=/home/kojima/Downloads/findbugs/lib/findbugs-ant.jar/>
+	   	 	 classpath="/home/kojima/Downloads/findbugs/lib/findbugs-ant.jar" />
     
     <target name="findbugs" depends="copy-lib">
 		<findbugs home="/home/kojima/Downloads/findbugs"
