@@ -6,7 +6,7 @@
     
 		<taskdef name="findbugs"
 	    	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
-	    	 	 classpath="${findbugs.dir}/lib/findbugs-ant.jar" />
+	    	 	 classpath="libs/findbugs-ant.jar" />
 	
     	<findbugs home="${findbugs.dir}"
         	  	  output="xml"
