@@ -27,6 +27,15 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertEquals("Hello, Hoge!", mActivity.addHello("Hoge"));
     }
     
+    public void testAddHello2() {
+    	assertEquals("Hello, HAD!", mActivity.addHello("HAD"));
+    }
+    
+    public void testAddHello3() {
+    	assertEquals("Hello, World!", mActivity.addHello("WOrld"));
+    }
+    
+    
     @Override
     protected void tearDown() throws Exception {
         // TODO Release memory etc.
