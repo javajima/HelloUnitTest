@@ -9,7 +9,7 @@
 	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
 	   	 	 classpath="/home/kojima/Downloads/findbugs/lib/findbugs-ant.jar" />
     
-    <target name="findbugs" depends="copy-lib">
+    <target name="findbugs">
 		<findbugs home="/home/kojima/Downloads/findbugs"
         	  	  output="xml"
         		  outputFile="${reports.dir}/findbugs_report.xml" >
