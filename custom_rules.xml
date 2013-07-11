@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom">
+    <property name="reports.dir" value="bin/reports" />
+    
+    <target name="copy-lib">
+        <copy file="/home/kojima/Downloads/android-junit-report-1.5.8.jar" todir="libs"/>
+    </target>
+    
+<!--<target name="init_props">
+        <xpath input="${tested.project.dir}/AndroidManifest.xml"
+               expression="/manifest/@package" output="tested.project.app.package" />
+    </target>
+-->    
+    <target name="fetch-test-report">
+        <echo>Downloading XML test report...</echo>
+        <mkdir dir="${reports.dir}" />
+        <exec executable="${adb}" failonerror="true">
+            <arg line="${adb.device.arg}" />
+            <arg value="pull" />
+            <arg value="/data/data/${tested.project.app.package}/files/junit-report.xml"/>
+            <arg value="${reports.dir}/junit-report.xml" />
+        </exec>
+    </target>
+    
+    <target name="test-and-fetch" depends="copy-lib, debug,install,test,fetch-test-report"/>
+    
+</project>

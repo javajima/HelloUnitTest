@@ -24,7 +24,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     //@Test
     public void testAddHelloLogic() {
-        assertEquals(mActivity.addHello("Hoge"), "Hello, Hoge!");
+        assertEquals("Hello, Hoge!", mActivity.addHello("Hoge"));
     }
     
     @Override

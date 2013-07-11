@@ -9,15 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-    private EditText et1;
+    private EditText et1; 
     private EditText et2;
-    private Button btn1;
+    private Button btn1; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-        et1 = (EditText)findViewById(R.id.et1);
+        et1 = (EditText)findViewById(R.id.et1); 
         et2 = (EditText)findViewById(R.id.et2);
         btn1 = (Button)findViewById(R.id.btn1);
 
