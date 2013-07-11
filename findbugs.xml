@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="findbugs_project">
-   <target name="findbugs">
-    	<property name="reports.dir" value="bin/reports" />
-    	<property name="findbugs.dir" value="/usr/local/findbugs"/>
+	<property name="reports.dir" value="bin/reports" />
+    <target name="copy-lib">
+        <copy file="/usr/local/findbugs/lib/findbugs-ant.jar" todir="libs"/>
+    </target>
     
-		<taskdef name="findbugs"
-	    	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
-	    	 	 classpath="libs/findbugs-ant.jar" />
-	
-    	<findbugs home="${findbugs.dir}"
+	<taskdef name="findbugs"
+	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
+    
+    <target name="findbugs" depends="copy-lib">
+		<findbugs home="${findbugs.dir}"
         	  	  output="xml"
         		  outputFile="${reports.dir}/findbugs_report.xml" >
         	<class location="bin/classes/${tested.project.app.package}" />
