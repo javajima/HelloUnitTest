@@ -5,15 +5,14 @@
         <copy file="/usr/local/findbugs/lib/findbugs-ant.jar" todir="libs"/>
     </target>
     
-	<taskdef name="findbugs"
-	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
-	   	 	 classpath="libs/findbugs-ant.jar" />
+    <taskdef name="findbugs"
+	   	 	 classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
     
-    <target name="findbugs">
-		<findbugs home="libs/findbugs"
+    <target name="findbugs" depends="copy-lib">
+		<findbugs home="/usr/local/findbugs"
         	  	  output="xml"
         		  outputFile="${reports.dir}/findbugs_report.xml" >
-        	<class location="bin/classes/${tested.project.app.package}" />
+        	<class location="bin/classes" />
     	</findbugs>
-	</target>
+    </target>
 </project>
