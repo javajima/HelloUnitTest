@@ -10,7 +10,7 @@
 	   	 	 classpath="libs/findbugs-ant.jar" />
     
     <target name="findbugs">
-		<findbugs home="/home/kojima/Downloads/findbugs"
+		<findbugs home="libs/findbugs"
         	  	  output="xml"
         		  outputFile="${reports.dir}/findbugs_report.xml" >
         	<class location="bin/classes/${tested.project.app.package}" />
