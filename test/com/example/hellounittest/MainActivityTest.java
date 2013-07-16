@@ -32,7 +32,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
     
     public void testAddHello3() {
-    	assertEquals("Hello, World!", mActivity.addHello("World"));
+    	assertEquals("Hello, World!", mActivity.addHello("WOrld"));
     }
     
     
